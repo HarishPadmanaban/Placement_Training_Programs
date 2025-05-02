@@ -14,9 +14,11 @@ public class TargetSum {
                 return 1;
             return 0;
         }
+        arr[index] = arr[index]*1;
         current += arr[index];
         count += targetCount(arr,target,count,index+1,current);
-        current -= arr[index];
+        arr[index] = arr[index]*(-1);
+        current += arr[index];
         count += targetCount(arr,target,count,index+1,current);
         return count;
     }

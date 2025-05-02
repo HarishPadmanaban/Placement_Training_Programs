@@ -85,5 +85,9 @@ public class Main {
 //            System.out.println("Print:"+i);
 //        }
 //        System.out.println("Direct Print");
+
+        int arr[] = {1,2,2,3,4,4,5,6,6,6};
+        HashSet<Integer> hm = new HashSet<>();
+        hm.addAll((List)Arrays.asList(arr));
     }
 }

@@ -1,12 +1,20 @@
-import java.util.*;
-public class CircularLinkedList {
-    class Node
-    {
-        int data;
-        Node next;
+package LinkedList;
 
+import java.util.Scanner;
+class Node
+{
+    int data;
+    Node next;
+    Node prev;
+
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
     }
-    public Node head;
+}
+public class DoublyLinkedList {
+    Node head;
     public void display()
     {
         if(head==null)
@@ -16,71 +24,53 @@ public class CircularLinkedList {
         }
         else{
             Node temp = head;
-            if(temp.next==head){
+            if(temp.next==null){
                 System.out.println(temp.data);
                 return;
             }
             else{
-                while(temp.next!=head)
+                while(temp.next!=null)
                 {
                     System.out.println(temp.data);
                     temp=temp.next;
                 }
                 System.out.println(temp.data);
             }
-
         }
     }
     public void insertatbegin()
     {
-        Node n = new Node();
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter value to insert:");
         int val = sc.nextInt();
-        n.data=val;
+        Node n = new Node(val);
+        if(head==null)
+        {
+            head=n;
+            return;
+        }
         n.next=head;
-        if(head!=null)
-        {
-            Node t = head;
-            while(t.next!=head)
-            {
-                t=t.next;
-            }
-            t.next=n;
-        }
-        else
-        {
-            n.next=n;
-        }
+        head.prev=n;
         head = n;
-        System.out.println("Node Inserted Successfully : "+val);
+        System.out.println("LinkedList.Node Inserted Successfully : "+val);
     }
     public void insertatend()
     {
-        if(head==null){
+        if(head==null)
+        {
             insertatbegin();
             return;
         }
-        Node n = new Node();
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter value to insert:");
         int val = sc.nextInt();
-        n.data=val;
-        n.next=head;
-        if(head!=null)
-        {
-            Node t = head;
-            while(t.next!=head)
-            {
-                t=t.next;
-            }
-            t.next=n;
-        }
-        else
-        {
-            n.next=n;
-        }
-        System.out.println("Node Inserted Successfully : "+val);
+        Node n = new Node(val);
+        Node t = head;
+        while(t.next!=null)
+            t=t.next;
+        t.next=n;
+        n.prev=t;
+        System.out.println("LinkedList.Node Inserted Successfully : "+val);
     }
     public void deleteatbegin()
     {
@@ -91,19 +81,16 @@ public class CircularLinkedList {
         }
         else{
             Node temp = head;
-            if(temp.next==head)
+            if(temp.next==null)
             {
-                System.out.println("Node deleted:"+temp.data);
+                System.out.println("LinkedList.Node deleted:"+temp.data);
                 head=null;
                 return;
             }
-            while(temp.next!=head)
-            {
-                temp=temp.next;
-            }
-            System.out.println("Node Deleted:"+head.data);
+            System.out.println("LinkedList.Node Deleted:"+head.data);
             head=head.next;
-            temp.next=head;
+            head.prev=null;
+            temp=null;
         }
     }
     public void deleteatend()
@@ -118,59 +105,70 @@ public class CircularLinkedList {
             Node temp = head;
             if(temp.next==head)
             {
-                System.out.println("Node deleted:"+temp.data);
+                System.out.println("LinkedList.Node deleted:"+temp.data);
                 head=null;
                 return;
             }
-            while(temp.next.next!=head)
+            while(temp.next!=null)
             {
                 temp=temp.next;
             }
-            System.out.println("Node Deleted:"+temp.next.data);
-            temp.next=head;
+            System.out.println("LinkedList.Node Deleted:"+temp.data);
+            temp.prev.next=null;
+            temp.prev=null;
         }
     }
-    public void deleteUsingKey()
+    public void KeySearch(int key)
     {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Key value to Search:");
-        int key = sc.nextInt();
-        int flag=1;
-        Node curr=head;
-        Node prev=null;
-        if(head==null)
+        Node t = head;
+        if(t==null)
         {
-            System.out.println("Nothing to delete");
+            System.out.println("Empty List");
             return;
         }
-        else{
-            while(curr.data!=key)
+        else if(t.next==null)
+        {
+            if(t.data==key)
+                System.out.println("Data found:"+t.data);
+            else
+                System.out.println("Data not found");
+            return;
+        }
+        if(key%2==0)
+        {
+            int c =0;
+            while(t.next!=null)
             {
-                if(curr.next==head)
+                if(c%2==0)
                 {
-                    System.out.println("Key not found in the List");
-                    flag=0;
-                    break;
+                    if(t.data==key)
+                    {
+                        System.out.println("Data Found at Even Position:"+t.data);
+                        return;
+                    }
                 }
-                prev=curr;
-                curr=curr.next;
+                t=t.next;
+                c++;
             }
+            System.out.println("Data not found at Even Position");
         }
-        if(flag==0)
+        else
         {
-            return;
-        }
-        if(curr==head&&curr.next==head)
-        {
-            deleteatbegin();
-        }
-        else if(curr.next==head)
-        {
-            deleteatend();
-        }
-        else{
-            prev.next=curr.next;
-            curr=null;
+            int c =0;
+            while(t.next!=null)
+            {
+                if(c%2!=0)
+                {
+                    if(t.data==key)
+                    {
+                        System.out.println("Data Found at odd position:"+t.data);
+                        return;
+                    }
+                }
+                t=t.next;
+                c++;
+            }
+            System.out.println("Data not found at odd Position");
         }
     }
     public void insertAtMid(int pos)
@@ -182,7 +180,7 @@ public class CircularLinkedList {
             System.out.println("Enter a valid Position");
             return;
         }
-        if(pos==1)
+        if(pos==1||head==null)
         {
             insertatbegin();
             return;
@@ -193,18 +191,20 @@ public class CircularLinkedList {
             return;
         }
         else{
-            Node b = new Node();
+
             Scanner sc = new Scanner(System.in);
             System.out.print("Enter value to insert:");
             int val = sc.nextInt();
-            b.data=val;
+            Node b = new Node(val);
             Node t = head;
-            for (int i = 1; i < pos-1&&t.next!=head; i++) {
+            for (int i = 1; i < pos-1&&t.next!=null; i++) {
                 t = t.next;
             }
+            t.next.prev=b;
             b.next=t.next;
+            b.prev=t;
             t.next=b;
-            System.out.println("Node inserted :"+val);
+            System.out.println("LinkedList.Node inserted :"+val);
         }
     }
     public void deleteAtMid(int pos)
@@ -228,12 +228,13 @@ public class CircularLinkedList {
         }
         else {
             Node t = head;
-            for (int i = 1; i < pos-1&&t.next!=head; i++) {
+            for (int i = 1; i < pos-1&&t.next!=null; i++) {
                 t = t.next;
             }
             Node v = t.next;
             t.next=t.next.next;
-            System.out.println("Node Deleted :"+v.data);
+            v.next.prev=t;
+            System.out.println("LinkedList.Node Deleted :"+v.data);
             v=null;
         }
     }
@@ -246,15 +247,16 @@ public class CircularLinkedList {
         do{
             c++;
             t=t.next;
-        }while(t!=head);
+        }while(t!=null);
         return c;
     }
-    public static void main(String[] args) {
-        CircularLinkedList cl = new CircularLinkedList();
+    public static void main(String args[])
+    {
+        DoublyLinkedList cl = new DoublyLinkedList();
         Scanner sc = new Scanner(System.in);
         boolean flag = true;
         do{
-            System.out.print("1.Insert At Begin\t2.Insert At End\t3.Display\t4.Delete at begin\t5.Delete at end\t6.Delete Using key\t7.Insert at Position\t8.Delete at Position\t9.Total Number of Nodes\t10.Exit\nEnter any value :");
+            System.out.print("1.Insert At Begin\t2.Insert At End\t3.Display\t4.Delete at begin\t5.Delete at end\t6.Delete Using key\t7.Insert At Random Position\t8.Delete at Random Position\t9.Key search\t10.Exit\nEnter any value :");
             int n = sc.nextInt();
             switch(n)
             {
@@ -274,20 +276,24 @@ public class CircularLinkedList {
                     cl.deleteatend();
                     break;
                 case 6:
-                    cl.deleteUsingKey();
+                    System.out.println("Enter key to search:");
+                    int v = sc.nextInt();
+                    cl.KeySearch(v);
                     break;
                 case 7:
-                    System.out.print("Enter position to insert:");
-                    int p = sc.nextInt();
-                    cl.insertAtMid(p);
+                    System.out.println("Enter position to insert:");
+                    int va=sc.nextInt();
+                    cl.insertAtMid(va);
                     break;
                 case 8:
-                    System.out.print("Enter position to delete:");
-                    int po = sc.nextInt();
-                    cl.deleteAtMid(po);
+                    System.out.println("Enter position to delete:");
+                    int val=sc.nextInt();
+                    cl.deleteAtMid(val);
                     break;
                 case 9:
-                    System.out.println("Number of nodes in the list :"+cl.getCount());
+                    System.out.println("Enter Key to search :");
+                    int value = sc.nextInt();
+                    cl.KeySearch(value);
                     break;
                 case 10:
                     flag=false;

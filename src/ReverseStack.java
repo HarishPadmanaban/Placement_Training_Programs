@@ -92,7 +92,7 @@ public class ReverseStack {
                 newNode.next=head;
                 head = newNode;
             }
-        System.out.println("Node inserted:"+newNode.data);
+        System.out.println("LinkedList.Node inserted:"+newNode.data);
             top++;
     }
     public int pop()
@@ -105,7 +105,7 @@ public class ReverseStack {
         else{
             Node t = head;
             head = head.next;
-            System.out.println("Node deleted : "+t.data);
+            System.out.println("LinkedList.Node deleted : "+t.data);
             return t.data;
         }
     }
@@ -161,7 +161,7 @@ public class ReverseStack {
                     break;
             }
         }while(flag);
-        //ReverseStack.Node t = r.head;
+        //ReverseStack.LinkedList.Node t = r.head;
         int c = r.pop();
         while(c != -1)
         {
