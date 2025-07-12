@@ -3,18 +3,18 @@ import java.util.List;
 
 public class PascalsTriangle {
     public static void main(String[] args) {
-        int row = 7;
-        int col = 4;
+        int row = 6;
+        //int col = 3;
         //System.out.println(valueOfRowAndCol(row-1,col-1));
-        //System.out.println(printRow(7));
-        System.out.println(printAll(8));
+        System.out.println(printRow(6));
+        //System.out.println(printAll(8));
     }
     public static int valueOfRowAndCol(int r,int c)
     {
         int numerator = 1;
         int denominator = 1;
         for(int i=0;i<c;i++)
-        {
+         {
             numerator *= (r-i);
             denominator *= (c-i);
         }
