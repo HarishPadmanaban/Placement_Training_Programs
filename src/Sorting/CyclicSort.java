@@ -2,12 +2,14 @@ package Sorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class CyclicSort {
     public static void main(String[] args) {
      int arr[] = {1,2,0};
      //sort(arr);
         // miss(arr);
+
      System.out.println(missingNum(arr,arr.length));
      System.out.println(Arrays.toString(arr));
     }

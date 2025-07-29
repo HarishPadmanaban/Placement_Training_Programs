@@ -2,11 +2,12 @@ import java.util.*;
 
 public class RemoveDuplicate2 {
     public static void main(String[] args) {
-        int nums[] = {4,1,2,3,1,2,5,2};
-        //System.out.println(minSizeSubArray(nums,7));
+        int nums[] = {4,1,1,3,1,1,1,2,5,2};
+        System.out.println(minSizeSubArray(nums,7));
         //leapYear(2100);
-//        validParanthesis2("[]{}()");
-        frequencyArrangement(nums);
+        //validParanthesis2("[]{}()");
+        //frequencyArrangement(nums);
+        //remove(nums);
     }
     public static int remove(int nums[])
     {

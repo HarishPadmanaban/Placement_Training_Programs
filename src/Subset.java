@@ -5,10 +5,11 @@ public class Subset {
     public static void main(String[] args) {
         int arr[] = {1,2,3};
         List<List<Integer>> ans = sub(arr);
-        for(List<Integer> l : ans)
-        {
-            System.out.println(l);
-        }
+//        for(List<Integer> l : ans)
+//        {
+//            System.out.println(l);
+//        }
+        System.out.println(ans);
     }
     static List<List<Integer>> sub(int num[])
     {
@@ -21,7 +22,7 @@ public class Subset {
                 List<Integer> al = new ArrayList<>();
                 al.addAll(outer.get(i));
                 al.add(n);
-                if(!outer.contains(al))
+                //if(!outer.contains(al))
                     outer.add(al);
             }
         }

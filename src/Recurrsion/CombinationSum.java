@@ -41,10 +41,8 @@ public class CombinationSum {
         {
             li.add(arr[ind]);
             combination(arr,target-arr[ind],ind,li,ans);
-
             li.remove(li.size()-1);
         }
         combination(arr,target,ind+1,li,ans);
     }
-
 }

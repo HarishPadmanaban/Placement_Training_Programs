@@ -1,9 +1,12 @@
 package String;
 
+import Sorting.QuickSort;
+
 import java.util.*;
 public class Isomorphic {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
+        //QuickSort qs = new QuickSort();
         String s1 = "badc";
         String s2 = "baba";
         if(s1.length()!=s2.length())
@@ -32,6 +35,6 @@ public class Isomorphic {
             }
         }
         if(flag)
-            System.out.println("String.Isomorphic");
+            System.out.println("String Isomorphic");
     }
 }

@@ -2,7 +2,7 @@ package Recurrsion;
 
 public class NQueens {
     public static void main(String[] args) {
-        int n =8;
+        int n =4;
         boolean[][] board = new boolean[n][n];
         System.out.println(Queens(board,0));
     }
@@ -22,8 +22,6 @@ public class NQueens {
                 board[r][col] = true;
                 count += Queens(board,r+1);
                 board[r][col]=false;
-
-
             }
         }
         return count;

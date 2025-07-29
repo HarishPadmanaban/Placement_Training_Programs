@@ -13,7 +13,7 @@ public class UniqueNumber {
                     sum++;
                 }
             }
-            System.out.print(sum+" ");
+            //System.out.print(sum+" ");
             if(sum%n !=0)
             {
                 result |= (1<<i);

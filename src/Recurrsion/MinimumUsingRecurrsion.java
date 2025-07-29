@@ -5,7 +5,7 @@ public class MinimumUsingRecurrsion {
         int arr[] = {1,2,3,4,-12};
         //System.out.println(Min(arr,0));
         char ch = 'a';
-        String str = "aabaa";
+        String str = "aabaabbaabacc";
         //System.out.println(str.substring(0,str.length()-1));
         //System.out.println(Character.getNumericValue(ch));
         System.out.println(Remove(str,""));

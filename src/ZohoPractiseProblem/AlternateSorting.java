@@ -1,3 +1,5 @@
+package ZohoPractiseProblem;
+
 import java.util.Arrays;
 
 public class AlternateSorting {
