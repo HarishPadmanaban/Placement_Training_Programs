@@ -56,7 +56,7 @@ public class LeetCodeExamples {
         return parentOf(root.right,val);
     }
 
-    private static int level(Node root, int val,int l) {
+    public static int level(Node root, int val,int l) {
         if(root==null) return -1;
         if(root.value==val) return l;
         int leftCheck= level(root.left,val,l+1);
@@ -90,7 +90,7 @@ public class LeetCodeExamples {
         System.out.println(res);
     }
 
-    private static void levelOrder(Node root) {
+    public static void levelOrder(Node root) {
         List<List<Integer>> res = new ArrayList<>();
         Queue<Node> q = new LinkedList<>();
         q.add(root);
