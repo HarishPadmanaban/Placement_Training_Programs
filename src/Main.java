@@ -1,3 +1,5 @@
+import java.sql.Time;
+import java.time.*;
 import java.util.*;
 public class Main {
     static int[][] game = new int[6][6];
@@ -90,6 +92,28 @@ public class Main {
 //        HashSet<Integer> hm = new HashSet<>();
 //        hm.addAll((List)Arrays.asList(arr));
 
-        System.out.println(3&1);
-    }
+        //System.out.println(3&1);
+        Date dateobj = new Date();
+//        Time timeobj = new Time(12);
+//        System.out.println(dateobj.getTime());
+//        System.out.println(dateobj.getDay());
+//        System.out.println(dateobj.getDate());
+//        System.out.println(dateobj.getHours());
+//        System.out.println(dateobj.getMonth());
+//        System.out.println(dateobj.getMinutes());
+//        System.out.println(dateobj.getSeconds());
+//        System.out.println(dateobj.getYear());
+//        System.out.println(dateobj);
+//        Date arr[] = new Date[10];
+//        for(int i=arr.length-1;i>=0;i--)
+//        {
+//            try{
+//                Thread.sleep(1000);
+//            }catch(Exception e){};
+//            arr[i] = new Date();
+//        }
+//        System.out.println(Arrays.toString(arr));
+//        Arrays.sort(arr, Comparator.comparingLong(Date::getTime));
+//        System.out.println(Arrays.toString(arr));
+}
 }
