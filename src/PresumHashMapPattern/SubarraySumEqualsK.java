@@ -1,13 +1,21 @@
+package PresumHashMapPattern;
+
 import java.util.HashMap;
 
 public class SubarraySumEqualsK {
     public static void main(String[] args) {
        // int arr [] = {3,4,7,-2,2,1,4,2};
-        int arr[] = {1,2,3,-3,1,1,1,4,2,-3};
-        int k = 3;
+        int arr[] = {1, 1, 0, 0, 0, 1, 1};
+        //[0, 1, 0, 0]
+        //1
+        //[0,0,0,0,0]   0
+        int k = 4;
         System.out.println(findCount(arr,k));
         System.out.println(findCountOptimal(arr,k));
     }
+
+    //https://leetcode.com/problems/continuous-subarray-sum/solutions/5276981/prefix-sum-hashmap-patterns-7-problems
+    // Important Pattern
 
     private static int findCountOptimal(int[] arr, int k) {
         int count = 0;
