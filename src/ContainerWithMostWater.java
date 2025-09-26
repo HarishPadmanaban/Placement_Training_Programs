@@ -3,9 +3,9 @@ import java.util.HashMap;
 
 public class ContainerWithMostWater {
     public static void main(String[] args) {
-      //  int arr[] = {1,8,6,2,5,4,8,3,7};
+      int arr[] = {1,8,6,2,5,4,8,3,7};
         //int arr[] = {8,7,2,1};
-        int arr[] = {0,1,0};
+        //int arr[] = {0,1,0};
 //
 //        int max = -1;
 //
@@ -16,8 +16,8 @@ public class ContainerWithMostWater {
 //                max = Math.max(max,water);
 //            }
 //        }
-       // System.out.println(optimized(arr));
-        System.out.println(contiguousSubarray(arr));
+        System.out.println(optimized(arr));
+        //System.out.println(contiguousSubarray(arr));
     }
     public static int optimized(int[] arr)
     {

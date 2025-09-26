@@ -13,10 +13,8 @@ public class BubbleSort {
                     f = true;
                 }
             }
-            if(!f)
-            {
-                break;
-            }
+            if(!f)  break;
+
         }
         System.out.println(Arrays.toString(arr));
 

@@ -115,5 +115,9 @@ public class Main {
 //        System.out.println(Arrays.toString(arr));
 //        Arrays.sort(arr, Comparator.comparingLong(Date::getTime));
 //        System.out.println(Arrays.toString(arr));
+
+        StringBuffer str = new StringBuffer("HEl2o");
+        int v = 2;
+        System.out.println(str);
 }
 }

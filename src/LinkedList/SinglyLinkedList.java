@@ -27,13 +27,13 @@ public class SinglyLinkedList {
             tail.next = newNode;
             //newNode will become new tail of the list
             tail = newNode;
-        }        }
+        }
+    }
 
 
     public void begininsert(int data)
     {
         Node newNode = new Node(data);
-        //Checks if the list is empty
         if(head == null) {
             head = newNode;
             tail = newNode;

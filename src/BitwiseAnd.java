@@ -2,7 +2,7 @@ public class BitwiseAnd {
     public static void main(String[] args) {
         int l = 5;
         int r = 7;
-        System.out.println(computeBitwiseAnd(l,r));
+        //System.out.println(computeBitwiseAnd(l,r));
         System.out.println(optimizedSolution(l,r));
     }
 

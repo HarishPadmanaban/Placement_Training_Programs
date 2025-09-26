@@ -14,7 +14,6 @@ public class JumpGame2 {
         {
             return count;
         }
-
         for (int j = arr[i]; j >0 ; j--) {
             min = Math.min(min,jumpgame(arr,i+j,count+1,min));
         }
@@ -25,7 +24,6 @@ public class JumpGame2 {
     {
         int jumps = 0;
         int l = 0, r =0;
-
         while (r<arr.length-1)
         {
             int farthest = r+1;
@@ -35,7 +33,7 @@ public class JumpGame2 {
             }
             l = r+1;
             r = farthest;
-            System.out.println(l+" "+r);
+            //System.out.println(l+" "+r);
             jumps++;
         }
         System.out.println(jumps);

@@ -31,6 +31,6 @@ public class CoinsDemonition {
             remaining-=1;
         }
         rs2 = remaining/2;
-        System.out.println((rs5+rs1+rs2)+" "+rs5+" "+rs2+" "+rs1);
+        System.out.println((rs5+rs1+rs2)+ "=>"+rs5+" "+rs2+" "+rs1);
     }
 }

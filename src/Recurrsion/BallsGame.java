@@ -19,7 +19,6 @@ public class BallsGame {
             res.add(p);
             return;
         }
-
         char c = up.charAt(0);
         for(int i=0;i<=p.length();i++)
         {

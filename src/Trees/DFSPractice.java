@@ -2,7 +2,7 @@ package Trees;
 
 import java.util.*;
 
-class TreeNode {
+public class TreeNode {
       int val;
       TreeNode left;
       TreeNode right;

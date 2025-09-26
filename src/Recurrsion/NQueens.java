@@ -1,16 +1,21 @@
 package Recurrsion;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NQueens {
     public static void main(String[] args) {
-        int n =4;
+        int n =8;
         boolean[][] board = new boolean[n][n];
-        System.out.println(Queens(board,0));
+        List<List<String>> al = new ArrayList<>();
+        System.out.println(Queens(board,0,al));
+        System.out.println(al);
     }
-    static int Queens(boolean[][] board,int r)
+    static int Queens(boolean[][] board,int r,List<List<String>> al )
     {
         if(r==board.length)
         {
-            display(board);
+            al.add(new ArrayList<>(display(board)));
             System.out.println();
             return 1;
         }
@@ -20,7 +25,7 @@ public class NQueens {
             if(isSafe(board,r,col))
             {
                 board[r][col] = true;
-                count += Queens(board,r+1);
+                count += Queens(board,r+1,al);
                 board[r][col]=false;
             }
         }
@@ -60,21 +65,29 @@ public class NQueens {
         }
         return true;
     }
-    static void display(boolean board[][])
+    static List<String> display(boolean board[][])
     {
+        List<String> l = new ArrayList<>();
         for(boolean[] arr:board)
         {
+            String s = "";
             for(boolean e : arr)
             {
+
                 if(e)
                 {
-                    System.out.print("Q ");
+                    s += "Q";
+                    //System.out.print("Q ");
                 }
                 else {
-                    System.out.print("X ");
+                    s += ".";
+                    //System.out.print(". ");
                 }
             }
-            System.out.println();
+            l.add(s);
+            //System.out.println();
         }
+        //System.out.println(l);
+        return l;
     }
 }
