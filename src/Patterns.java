@@ -56,7 +56,7 @@ public class Patterns {
 //            System.out.println();
 //        }
 
-        lookAndSay(7);
+        lookAndSay(4);
 
     }
     public static void lookAndSay(int n)
@@ -84,10 +84,12 @@ public class Patterns {
                 i++;
             }
             //System.out.println(res);
-            print(res);
+            //print(res);
             prev.clear();
             prev.addAll(res);
         }
+        //System.out.println(new StringBuffer(Arrays.toString(prev.toArray())));
+        print(prev);
     }
     public static void print(List<Integer> res)
     {

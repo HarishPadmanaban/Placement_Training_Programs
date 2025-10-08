@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class MaxSizeSubarrayWithK {
     public static void main(String[] args) {
-        int [] arr = {5, 18, -14, 2, 4, 12};
+        int [] arr = {10, 5, 2, 7, 1, -10};
         int k = 15;
         System.out.println(maxSize(arr,k));
     }
