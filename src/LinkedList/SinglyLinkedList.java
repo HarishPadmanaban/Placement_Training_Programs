@@ -353,7 +353,7 @@ public class SinglyLinkedList {
         SinglyLinkedList l = new SinglyLinkedList();
         do
         {
-            System.out.println("1.Add node\n2.Delete node\n3.Display\n4.searchInEvenPosition\n5.begininsert\n6.PalindromeCheck\n7.Reverse\n8.Reverse Using Recurrsion\n9.Odd Even Separtion of List\n10.ReversePortion\n11.Palindrome or Not\n12. Reorder List\n13.Rotate list by K nodes ");
+            System.out.println("1.Add node\n2.Delete node\n3.Display\n4.searchInEvenPosition\n5.begininsert\n6.PalindromeCheck\n7.Reverse\n8.Reverse Using Recurrsion\n9.Odd Even Separtion of List\n10.ReversePortion\n11.Palindrome or Not\n12. Reorder List\n13.Rotate list by K nodes\n14. Sort List");
             int c = sc.nextInt();
 
             switch(c)
@@ -399,6 +399,10 @@ public class SinglyLinkedList {
                     int k = sc.nextInt();
                     l.rotateByKNodes(k);
                     break;
+                case 14:
+                    l.sortList();
+                    l.display();
+                    break;
                 default:
                     System.out.println("Input Invalid");
                     break;
@@ -406,5 +410,55 @@ public class SinglyLinkedList {
             System.out.println("Do you want to continue (1/0):");
             e = sc.nextInt();
         }while(e==1);
+    }
+
+    private void sortList() {
+        head = sortLLByMergeSort(head);
+    }
+
+    private Node sortLLByMergeSort(Node head) {
+        if(head==null || head.next==null){
+            return head;
+        }
+
+        Node middle = findMiddle(head);
+        Node afterMid = middle.next;
+        middle.next = null;
+        Node left = sortLLByMergeSort(head);
+        Node right = sortLLByMergeSort(afterMid);
+
+        return sortLLByMerger(left,right);
+    }
+
+    private Node findMiddle(Node head) {
+        if(head==null) return null;
+        Node fast = head.next;
+        Node slow = head;
+        while(fast!=null && fast.next!=null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    private Node sortLLByMerger(Node a, Node b) {
+        Node dummy = new Node(0);
+        Node it = dummy;
+        while(a!=null && b!=null)
+        {
+            if(a.data<b.data)
+            {
+                it.next = a;
+                a = a.next;
+            }
+            else{
+                it.next = b;
+                b = b.next;
+            }
+            it = it.next;
+        }
+        it.next = (a!=null)? a :b;
+        return dummy.next;
     }
 }
