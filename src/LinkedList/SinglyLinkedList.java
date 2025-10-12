@@ -353,7 +353,7 @@ public class SinglyLinkedList {
         SinglyLinkedList l = new SinglyLinkedList();
         do
         {
-            System.out.println("1.Add node\n2.Delete node\n3.Display\n4.searchInEvenPosition\n5.begininsert\n6.PalindromeCheck\n7.Reverse\n8.Reverse Using Recurrsion\n9.Odd Even Separtion of List\n10.ReversePortion\n11.Palindrome or Not\n12. Reorder List\n13.Rotate list by K nodes\n14. Sort List");
+            System.out.println("1.Add node\n2.Delete node\n3.Display\n4.searchInEvenPosition\n5.begininsert\n6.PalindromeCheck\n7.Reverse\n8.Reverse Using Recurrsion\n9.Odd Even Separtion of List\n10.ReversePortion\n11.Palindrome or Not\n12. Reorder List\n13.Rotate list by K nodes\n14. Sort List\n15.Exit");
             int c = sc.nextInt();
 
             switch(c)
@@ -402,6 +402,8 @@ public class SinglyLinkedList {
                 case 14:
                     l.sortList();
                     l.display();
+                    break;
+                case 15:
                     break;
                 default:
                     System.out.println("Input Invalid");
