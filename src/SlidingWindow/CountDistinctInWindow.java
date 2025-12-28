@@ -7,7 +7,7 @@ import java.util.List;
 public class CountDistinctInWindow {
     public static void main(String[] args) {
         int [] arr = {8,10,12};
-                //{1, 2, 1, 3, 4, 2, 3};
+        //{1, 2, 1, 3, 4, 2, 3};
         //10 ,3 ,12 ,4 ,10 ,9 ,9 ,12 ,8 ,4 ,1 ,3 ,3 ,2 ,11 ,12 ,11 ,11
         int k = 1;
         System.out.println(countDistinct(arr,k));
